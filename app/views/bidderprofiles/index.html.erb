@@ -1,0 +1,52 @@
+
+<h1 style="color:Blue ;">Listing Bidders</h1>
+
+<table width="100%" style="text-align:center">
+
+<tr style="background-color:#00008B" height="60px">
+<th style="color:Azure ;">First Name</th>
+<th style="color:Azure ;">Last Name</th>
+<th style="color:Azure ;">Date of Birth</th>
+<th style="color:Azure ;">Address</th>
+<th style="color:Azure ;">City</th>
+<th style="color:Azure ;">State</th>
+<th style="color:Azure ;">ZipCode</th>
+<th style="color:Azure ;">Country</th>
+<th style="color:Azure ;">Phone</th>
+<th style="color:Azure ;">Email</th>
+<th ></th>
+</tr>
+
+<% flag = 1%>
+<% @bidderprofiles.each do |bidderprofile| %>
+    <% if flag % 2  != 0%>
+    <tr style="background-color:#a0b2a2;" height="50px">
+    <%else%>
+    <tr style="background-color:#d6dde6;" height="50px">
+    <% end
+    flag += 1 %>
+<td><%= bidderprofile.first_name %></td>
+<td><%= bidderprofile.last_name %></td>
+<td><%= bidderprofile.date_of_birth %></td>
+<td><%= bidderprofile.address %></td>
+<td><%= bidderprofile.city %></td>
+<td><%= bidderprofile.state %></td>
+<td><%= bidderprofile.zipcode %></td>
+<td><%= bidderprofile.country %></td>
+<td><%= bidderprofile.phone %></td>
+<td><%= bidderprofile.email %></td>
+<td>
+</td>
+
+<td> 
+<%= link_to 'Show', bidderprofile_path(bidderprofile) %>
+<%= link_to 'Edit', edit_bidderprofile_path(bidderprofile) %>  
+</td>
+
+</tr>
+<% end %>
+
+</table>
+
+<%= link_to 'Home', hubs_path %>
+

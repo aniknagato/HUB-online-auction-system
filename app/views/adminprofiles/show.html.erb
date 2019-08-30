@@ -1,0 +1,47 @@
+
+<h3>Admin Information:</h3>
+<body style="background-color:#b3ffb3">
+
+<p>
+<b>Name:</b>
+<%= @adminprofile.first_name %> <%= @adminprofile.last_name %>
+</p>
+
+<p>
+<b>Date of Birth:</b>
+<%= @adminprofile.date_of_birth %>
+</p>
+
+<p>
+<b>Address:</b>
+<%= @adminprofile.address %></br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= @adminprofile.city %> <%= @adminprofile.state %> <%= @adminprofile.zipcode %></br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= @adminprofile.country %>
+</p>
+
+<p>
+<b>Phone:</b>
+<%= @adminprofile.phone %><br>
+</p>
+
+<p>
+<b>Email:</b>
+<%= @adminprofile.email %><br>
+</p>
+
+<p>
+<b>Username:</b>
+<%= @adminprofile.username %><br>
+</p>
+
+<br>
+<%= link_to 'Edit Profile', edit_adminprofile_path(@adminprofile) %><br>
+<%= link_to 'Add Bidding Item', new_item_path(@adminprofile.id) %><br>
+<%= link_to 'My Added Items', allmineitem_path(@adminprofile.id) %><br>
+<%= link_to 'All Items', items_path%>
+<%= link_to 'All Admins', adminprofiles_path %><br>
+<%= link_to 'All Bidders', showallbidderprofiles_path %><br>
+<%= link_to 'Logout', logout_path, method: :delete %>
+</body>

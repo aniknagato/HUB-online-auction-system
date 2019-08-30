@@ -1,0 +1,41 @@
+<h3>Bidder Information:</h3>
+<body style="background-color:#b3ffb3">
+
+<p>
+<b>Name:</b>
+<%= @bidderprofile.first_name %> <%= @bidderprofile.last_name %>
+</p>
+
+<p>
+<b>Date of Birth:</b>
+<%= @bidderprofile.date_of_birth %>
+</p>
+
+<p>
+<b>Address:</b>
+<%= @bidderprofile.address %></br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= @bidderprofile.city %> <%= @bidderprofile.state %> <%= @bidderprofile.zipcode %></br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= @bidderprofile.country %>
+</p>
+
+<p>
+<b>Phone:</b>
+<%= @bidderprofile.phone %><br>
+</p>
+
+<p>
+<b>Email:</b>
+<%= @bidderprofile.email %><br>
+</p>
+
+<p>
+<b>Username:</b>
+<%= @bidderprofile.username %><br>
+</p>
+
+<%= link_to 'Edit', edit_bidderprofile_path(@bidderprofile) %>
+<%= link_to 'Items', items_path%>
+<%= link_to 'Show My Bids', show_bids_path(@bidderprofile)%>
+

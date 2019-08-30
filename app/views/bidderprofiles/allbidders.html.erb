@@ -1,0 +1,49 @@
+
+<%= link_to 'Home', hubs_path %>
+<%= link_to 'My Profile', adminprofile_path(session[:user_id]) %>
+<%= link_to 'Logout', logout_path, method: :delete %>
+
+<h1 style="color:ForestGreen ;" align = "center">Listing Bidders</h1>
+
+<table width="90%" style="text-align:center" align = "center">
+
+<tr style="background-color:#228B22" height="60px">
+<th style="color:Azure ;">First Name</th>
+<th style="color:Azure ;">Last Name</th>
+<th style="color:Azure ;">Address</th>
+<th style="color:Azure ;">City</th>
+<th style="color:Azure ;">State</th>
+<th style="color:Azure ;">ZipCode</th>
+<th style="color:Azure ;">Country</th>
+<th style="color:Azure ;">Phone</th>
+<th style="color:Azure ;">Email</th>
+
+</tr>
+
+<% flag = 1%>
+<% @bidderprofiles.each do |bidderprofile| %>
+    <% if flag % 2  != 0%>
+    <tr style="background-color:#a0b2a2;" height="50px">
+    <%else%>
+    <tr style="background-color:#F0E68C;" height="50px">
+    <% end
+    flag += 1 %>
+<td><%= bidderprofile.first_name %></td>
+<td><%= bidderprofile.last_name %></td>
+<td><%= bidderprofile.address %></td>
+<td><%= bidderprofile.city %></td>
+<td><%= bidderprofile.state %></td>
+<td><%= bidderprofile.zipcode %></td>
+<td><%= bidderprofile.country %></td>
+<td><%= bidderprofile.phone %></td>
+<td><%= bidderprofile.email %></td>
+<td><%= link_to 'Delete Bidder', bidderprofile_path(bidderprofile), method: :delete %></td>
+
+
+</tr>
+<% end %>
+
+</table>
+
+
+

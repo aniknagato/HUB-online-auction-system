@@ -1,0 +1,85 @@
+<body style="background-color:#b3ffb3">
+
+
+<% if @bidderprofile.errors.any? %>
+<div style="background-color: #FF0000">
+<p>
+    Please fix the following errors:
+</p>
+<ul>
+    <% @bidderprofile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>   
+</ul>
+</div>
+<% end %>
+
+
+<h1>Editing Bidder Profile</h1>
+
+<%= form_for @bidderprofile do |f| %>
+    <p>
+    First Name<br>
+    <%= f.text_field :first_name %>
+    </p>
+
+    <p>
+    Last Name<br>
+    <%= f.text_field :last_name %>
+    </p>
+
+    <p>
+    Date of Birth<br>
+    <%= f.text_field :date_of_birth %>
+    </p>
+
+    <p>
+    Address<br>
+    <%= f.text_field :address %><br>
+    </p>
+
+    <p>
+    City<br>
+    <%= f.text_field :city %><br>
+    </p>
+
+    <p>
+    State<br>
+    <%= f.text_field :state %><br>
+    </p>
+
+    <p>
+    Zip Code<br>
+    <%= f.text_field :zipcode %><br>
+    </p>
+
+    <p>
+    Country<br>
+    <%= f.text_field :country %><br>
+    </p>
+
+    <p>
+    Phone<br>
+    <%= f.text_field :phone %><br>
+    </p>
+
+    <p>
+    Email<br>
+    <%= f.text_field :email %><br>
+    </p>
+
+    <p>
+    Username<br>
+    <%= f.text_field :username %><br>
+    </p>
+
+    <p>
+    Password<br>
+    <%= f.password_field :password %><br>
+    </p>
+ 
+    <p>
+    <%= f.submit "Update Bidderprofile" %>
+    </p>
+    
+<% end %>

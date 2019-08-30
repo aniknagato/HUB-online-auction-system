@@ -1,0 +1,153 @@
+<html>
+<h1 align=center>HUB-Online-Auction-System</h1> 
+<h2 align=center><img src=<%= image_path("five_star.jpg") %> height="150px", width="400px"></h2>
+
+<table>
+<td><img src=<%= image_path('bid.png') %> width="350px" ><br><br></td>
+
+<td width="20px"></td>
+
+<td>
+<p> 
+<font size="4"> <strong>An online auction is a service in which auction users or participants sell or bid for products or services via the Internet. Virtual auctions facilitate online activities between buyers and sellers in different locations or geographical areas. Various auction sites provide users with platforms powered by different types of auction software.</strong></font>
+</p>
+</td>
+</table>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fce8e8;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Registration')">Registration</button>
+  <button class="tablinks" onclick="openTab(event, 'Log in')">Log in</button>
+  <button class="tablinks" onclick="openTab(event, 'Policy')">Policy</button>
+  <button class="tablinks" onclick="openTab(event, 'Developers')">Developers</button>
+  
+</div>
+
+<div id="Developers" class="tabcontent">
+  <h2 style="color:purple;padding:10px;">Personal Info</h2>
+  <ul>
+    <li>&emsp;<b>Anik Khan</b> <br>
+    &emsp;<b>PhD Student, University of Memphis</b> <br>
+    &emsp;<b>Email:</b> akhan@memphis.edu<br>
+    &emsp;<b>Tel:</b> 9013516787 <br></li>
+    <br>
+    <li>&emsp;<b>Mithun Saha</b> <br>
+    &emsp;<b>PhD Student, University of Memphis</b> <br>
+    &emsp;<b>Email:</b> msaha@memphis.edu<br>
+    &emsp;<b>Tel:</b> 9012013541 <br></li>
+    <br>
+    <li>&emsp;<b>Zannatul Firdous</b> <br>
+    &emsp;<b>PhD Student, University of Memphis</b> <br>
+    &emsp;<b>Email:</b> zfirdous@memphis.edu<br>
+    &emsp;<b>Tel:</b> 9514897108 <br></li>
+  
+  </ul>
+  
+</div>
+
+<div id="Registration" class="tabcontent">
+  <h2 style="color:purple;padding:10px;">Registration</h2>
+  <ul>
+  <li><%= link_to 'Admin Registration', new_adminprofile_path %></li>
+  <li><%= link_to 'Bidder Registration', new_bidderprofile_path %></li>
+  
+</ul>
+  
+</div>
+
+
+<div id="Log in" class="tabcontent">
+  <h2 style="color:purple;padding:10px;">Log in</h2>
+  <ul>
+    <li><%= link_to 'Log in as Admin', login_path  %></li>
+    <li><%= link_to 'Log in as Bidder', login_path  %></li>  
+  </ul>
+  
+</div>
+
+<div id="Policy" class="tabcontent">
+  <h2 style="color:purple;padding:10px;">Terms & Conditions</h2>
+  <ul>
+  <li>A user is allowed only one bid per item and cannot change the bid once made. </li>
+  <li>The highest unique bid for an item will be the winning bid for that item.</li>
+  <li>The highest bid value needs to be set somewhat lower than the actual value of the item.</li>
+  <li>our online auction will select a winner with highest unique bid.</li>
+  <li>An admin should be able to delete a certain user anytime and this should delete all the bids associated with the user.</li>
+  <li>Only an admin should be allowed to view all the bids made.</li>
+  
+ 
+</ul>
+  
+</div>
+
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add font awesome icons -->
+<div align="center" style="color:green;padding:10px;">Follow us at social media <br>
+    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/" class="fa fa-twitter"></a>
+    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+    <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
+</div>
+
+</html>
+
+
+
+

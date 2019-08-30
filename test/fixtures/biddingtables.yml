@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: biddingtables
+#
+#  id               :integer          not null, primary key
+#  bidding_price    :float
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  item_id          :integer
+#  bidderprofile_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bidding_price: 1.50
+
+two:
+  bidding_price: 1.50

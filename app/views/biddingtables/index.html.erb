@@ -1,0 +1,30 @@
+<h1> Bids </h1>
+
+<table width="90%" style="text-align:center" align= "center">
+
+<tr style="background-color:#006666" height="60px">
+<th style="color:Azure ;">Bid Price</th>
+<th style="color:Azure ;">Item Name</th>
+<th style="color:Azure ;">Bidder</th>
+
+</tr>
+<% flag = 1%>
+<% @biddingtables.each do |bid| %>
+    <% if flag % 2  != 0%>
+    <tr style="background-color:#66ffff;" height="50px">
+    <%else%>
+    <tr style="background-color:#ccffff;" height="50px">
+    <% end
+    flag += 1 %>
+<td> <%= bid.bidding_price %> </td>
+<td> <%= bid.item.item_name %> </td>
+<td> <%= bid.bidderprofile.username %> </td>
+
+</tr>
+<% end %>
+
+</table>
+
+<td> 
+<%= link_to 'Back to Items', items_path %>
+</td>

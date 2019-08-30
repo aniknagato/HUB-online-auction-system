@@ -1,0 +1,55 @@
+<% if @biddingtable.errors.any? %>
+<div style="background-color: #FF0000">
+<p>
+    Please fix the following errors:
+</p>
+<ul>
+    <% @biddingtable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>   
+</ul>
+</div>
+<% end %>
+
+
+<h2>Item Information</h2>
+
+<p>
+<% @item = Item.find(@biddingtable.item_id)%>
+
+Item Name:
+<%= @item.item_name %>
+
+</br></br>
+
+Bid Price Limit:
+<%= @item.auction_price %>
+</p>
+
+
+<h2>Place Bid</h2>
+
+<%= form_for @biddingtable do |f| %>
+
+    <p>
+    Item ID<br>
+    <%= f.text_field :item_id %>
+    </p>    
+
+    <p>
+    Bid Price<br>
+    <%= f.text_field :bidding_price %>
+    </p>
+
+    <p>
+    User Name<br>
+    <%= text_field_tag 'username' %>
+    </p>
+    
+    <p>
+    <%= f.submit "Bid" %>
+    </p>
+    
+<% end %>
+
+<%= link_to 'Back to Items', items_path %>

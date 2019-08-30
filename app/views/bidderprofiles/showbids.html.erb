@@ -1,0 +1,26 @@
+<h1> Bids </h1>
+<body style="background-color:#b3ffb3">
+
+<table>
+
+<tr>
+<th>Bid Price</th>
+<th>Item Name</th>
+<th>Bidder</th>
+
+</tr>
+
+<% @bidderbids.each do |bid| %>
+<tr>
+<td> <%= bid.bidding_price %> </td>
+<td> <%= bid.item.item_name %> </td>
+<td> <%= bid.bidderprofile.username %> </td>
+
+</tr>
+<% end %>
+
+</table>
+
+<td> 
+<%= link_to 'Back to Items', items_path %>
+</td>

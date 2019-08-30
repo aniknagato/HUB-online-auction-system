@@ -1,0 +1,40 @@
+<%= link_to 'My Profile', adminprofile_path(session[:user_id]) %>
+<%= link_to 'Logout', logout_path, method: :delete %>
+
+<body style="background-color:#ffff99">
+<h1>New Item Profile</h1>
+<%= form_for @item do |f| %>
+
+    <p>
+    Admin ID<br>
+    <%= f.text_field :adminprofile_id %>
+    </p>
+
+    <p>
+    Item's Name<br>
+    <%= f.text_field :item_name %>
+    </p>
+
+    <p>
+    Original Price<br>
+    <%= f.text_field :original_price %>
+    </p>
+
+    <p>
+    Set Auction Price<br>
+    <%= f.text_field :auction_price %><br>
+    </p>
+
+    <p>
+    Description<br>
+    <%= f.text_field :description %>
+    </p>
+
+
+    <p>
+    <%= f.submit "Create Item" %>
+    </p>
+    
+<% end %>
+
+

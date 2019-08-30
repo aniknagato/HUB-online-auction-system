@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: items
+#
+#  id              :integer          not null, primary key
+#  item_name       :string
+#  original_price  :float
+#  auction_price   :string
+#  image_source    :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  description     :string
+#  adminprofile_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  original_price: 1.5
+  auction_price: MyString
+  image_source: MyString
+
+two:
+  item_name: MyString
+  original_price: 1.5
+  auction_price: MyString
+  image_source: MyString

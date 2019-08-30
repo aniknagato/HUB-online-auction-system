@@ -1,0 +1,56 @@
+
+<% if session[:role] == "admin" %>
+    <%= link_to 'My Profile', adminprofile_path(session[:user_id]) %>
+    <%= link_to 'Logout', logout_path, method: :delete %>
+<% end %>
+<h1 align= "center"> Items </h1>
+
+<table width="90%" style="text-align:center" align= "center">
+
+<tr style="background-color:#330033" height="60px">
+<th style="color:Azure ;">Name</th>
+<th style="color:Azure ;">Original Price</th>
+<th style="color:Azure ;">Maximum Auction Price </th>
+<th style="color:Azure ;">Description</th>
+<th style="color:Azure ;">Posted By</th>
+
+</tr>
+<% flag = 1%>
+<% @items.each do |item| %>
+
+
+    <% if flag % 2  != 0%>
+    <tr style="background-color:#ffe6ff;" height="50px">
+    <%else%>
+    <tr style="background-color:#ffffb3;" height="50px">
+    <% end
+    flag += 1 %>
+<td> <%= item.item_name %> </td>
+<td> <%= item.original_price %> </td>
+<td> <%= item.auction_price %> </td>
+<td> <%= item.description %> </td>
+<td> <%= item.adminprofile.username %> </td>
+
+<td> 
+<% if session[:role] == "bidder" %>
+    <% if item.status == "active" %>
+        <%= link_to 'Bid', new_bid_path(item.id) %> 
+    <%end%>
+<% end %>
+</td>
+
+
+</tr>
+<% end %>
+
+</table>
+
+<p>
+<% if session[:role] == "bidder" %>
+    <%= link_to 'My Profile', bidderprofile_path(session[:user_id]) =%>
+<% end %>
+</p>
+<p>
+<%= link_to 'Logout', logout_path, method: :delete %>
+</p>
+
